@@ -1,0 +1,14 @@
+---
+
+- name: Update all packages
+  gather_facts: false
+  hosts: all
+  become: true
+  become_user: root
+  become_method: sudo
+  tasks:
+
+   - name: Update all packages to the latest version
+     apt:
+      upgrade: dist
+      update_cache: yes
